@@ -20,3 +20,4 @@ C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Proget
 C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\bin\Debug\HCI_Project.exe
 C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\bin\Debug\HCI_Project.pdb
 C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\obj\Debug\HCI_Project.WinForm.resources
+C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\obj\Debug\HCI_Project.CreditForm.resources

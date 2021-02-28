@@ -76,7 +76,7 @@ namespace HCI_Project
             // Make the app fullscreen
             //this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.WindowState = FormWindowState.Normal;
-            //this.FormBorderStyle = FormBorderStyle.None;
+            this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             this.GamePanel.Dock = DockStyle.Fill;
             //this.BringToFront();
@@ -100,7 +100,7 @@ namespace HCI_Project
             homeButton.Text = home[language];
             resetButton.Text = reset[language];
             newGameButton.Text = newGame[language];
-            quitButton.Text = quit[language];
+            //quitButton.Text = quit[language];
 
             // To resize the fonts every time the form is reshaped,
             // it is computed the size of the form compared to the size of the original
@@ -163,8 +163,8 @@ namespace HCI_Project
         private void credits_Click(object sender, EventArgs e)
         {
             //this.Hide();
-            //Form f2 = new CreditsForm();
-            //f2.ShowDialog();
+            Form credit = new CreditForm();
+            credit.ShowDialog();
             //this.Close();
         }
 

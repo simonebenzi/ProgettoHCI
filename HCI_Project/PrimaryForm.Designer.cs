@@ -75,7 +75,7 @@
             this.initialPage.Controls.Add(this.tableLayoutPanel1);
             this.initialPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.initialPage.Location = new System.Drawing.Point(0, 0);
-            this.initialPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.initialPage.Margin = new System.Windows.Forms.Padding(4);
             this.initialPage.Name = "initialPage";
             this.initialPage.Size = new System.Drawing.Size(942, 493);
             this.initialPage.TabIndex = 0;
@@ -92,7 +92,7 @@
             this.tableLayoutPanel1.Controls.Add(this.exit, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -111,7 +111,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.startEx.AutoSize = true;
             this.startEx.Location = new System.Drawing.Point(380, 127);
-            this.startEx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startEx.Margin = new System.Windows.Forms.Padding(4);
             this.startEx.Name = "startEx";
             this.startEx.Size = new System.Drawing.Size(180, 72);
             this.startEx.TabIndex = 0;
@@ -126,7 +126,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.settings.AutoSize = true;
             this.settings.Location = new System.Drawing.Point(380, 207);
-            this.settings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.settings.Margin = new System.Windows.Forms.Padding(4);
             this.settings.Name = "settings";
             this.settings.Size = new System.Drawing.Size(180, 72);
             this.settings.TabIndex = 1;
@@ -140,7 +140,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.credits.AutoSize = true;
             this.credits.Location = new System.Drawing.Point(380, 287);
-            this.credits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.credits.Margin = new System.Windows.Forms.Padding(4);
             this.credits.Name = "credits";
             this.credits.Size = new System.Drawing.Size(180, 72);
             this.credits.TabIndex = 2;
@@ -155,7 +155,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.exit.AutoSize = true;
             this.exit.Location = new System.Drawing.Point(380, 367);
-            this.exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exit.Margin = new System.Windows.Forms.Padding(4);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(180, 72);
             this.exit.TabIndex = 3;
@@ -168,7 +168,7 @@
             this.startExPage.Controls.Add(this.label1);
             this.startExPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startExPage.Location = new System.Drawing.Point(0, 0);
-            this.startExPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startExPage.Margin = new System.Windows.Forms.Padding(4);
             this.startExPage.Name = "startExPage";
             this.startExPage.Size = new System.Drawing.Size(942, 493);
             this.startExPage.TabIndex = 1;
@@ -217,9 +217,10 @@
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(116, 12);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(116, 294);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
             // ButtonPanel
@@ -281,13 +282,17 @@
             // 
             // quitButton
             // 
+            this.quitButton.BackColor = System.Drawing.Color.Transparent;
+            this.quitButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("quitButton.BackgroundImage")));
+            this.quitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.quitButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quitButton.FlatAppearance.BorderSize = 0;
+            this.quitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quitButton.Location = new System.Drawing.Point(731, 3);
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(76, 62);
             this.quitButton.TabIndex = 2;
-            this.quitButton.Text = "Quit";
-            this.quitButton.UseVisualStyleBackColor = true;
+            this.quitButton.UseVisualStyleBackColor = false;
             this.quitButton.Click += new System.EventHandler(this.quitButton_Click_2);
             // 
             // UpperLabelMovePanel
@@ -489,7 +494,7 @@
             this.Controls.Add(this.initialPage);
             this.Controls.Add(this.startExPage);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PrimaryForm";
             this.Text = "Nome App";
             this.Load += new System.EventHandler(this.PrimaryForm_Load);
