@@ -13,31 +13,7 @@ namespace HCI_Project
     public partial class PrimaryForm : Form
     {
         private int _lastFormSize;
-
-        // To be chosen by the user
-        private int minRows = 5;
-        private int maxRows = 11;
-        private int minColumns = 5;
-        private int maxColumns = 11;
-        public int language = 1; // 0 - Italian, 1 - English
-        private int maxMoves = 10;
-
-        // To be changed inside the txt file
-        Color tilesColor = Color.Black;
-        Color wrongTilesColor = Color.Red;
-        Color moveTilesColor = Color.Gray;
-        Color backgroundColor = SystemColors.Control;
-        Color rectBackgroundColor = Color.White;
-
-        // Private fields to be used for the correct program operations
-        // Dialogues
-        private string[] quit = { "Esci", "Quit" };
-        private string[] home = { "Menu principale", "Main menu" };
-        private string[] newGame = { "Nuovo gioco", "New game" };
-        private string[] reset = { "Reset", "Reset" };
-        private string[] back = { "Indietro", "Back" };
-        private string[] numOp = { "Numero operazioni:", "Number of moves:" };
-        private string[] maxNumOp = { "Numero massimo: ", "Maximum number: " };
+        private IniParser config;
 
         // Form and font properties to be used for different screen sizes
         private int originalFormSize;
@@ -70,6 +46,10 @@ namespace HCI_Project
         {
             InitializeComponent();
 
+            // Used to read/modify config.ini or used to create that (if not present)
+            config = new IniParser(Settings.PATH);
+            InitializeSettings();
+            SetLanguage();
             this.Resize += new EventHandler(PrimaryForm_Resize);
             _lastFormSize = GetFormArea(this.Size);
 
@@ -83,24 +63,6 @@ namespace HCI_Project
 
             // Initializing the GamePanel in background
             GamePanel.Visible = false;
-
-            // Standardizing all the background colors
-            this.BackColor = backgroundColor;
-            labelNumOp.BackColor = backgroundColor;
-            numMosse.BackColor = backgroundColor;
-            maxNumMosse.BackColor = backgroundColor;
-            MainPanel.BackColor = backgroundColor;
-            MoveLabelPanel.BackColor = backgroundColor;
-            UpperLabelMovePanel.BackColor = backgroundColor;
-
-            // Writing on the labels and the buttons
-            labelNumOp.Text = numOp[language];
-            maxNumMosse.Text = maxNumOp[language] + maxMoves.ToString();
-            backButton.Text = back[language];
-            homeButton.Text = home[language];
-            resetButton.Text = reset[language];
-            newGameButton.Text = newGame[language];
-            quitButton.Text = quit[language];
 
             // To resize the fonts every time the form is reshaped,
             // it is computed the size of the form compared to the size of the original
@@ -166,6 +128,179 @@ namespace HCI_Project
             //Form f2 = new CreditsForm();
             //f2.ShowDialog();
             //this.Close();
+        }
+
+        private void itaCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (itaCheckBox.Checked)
+            {
+                engCheckBox.Checked = false;
+            }
+        }
+
+        private void engCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (engCheckBox.Checked)
+            {
+                itaCheckBox.Checked = false;
+            }
+        }
+
+        private void settings_Click(object sender, EventArgs e)
+        {
+            settingsPage.BringToFront();
+        }
+
+        private void settingReturnBtn_Click(object sender, EventArgs e)
+        {
+            initialPage.BringToFront();
+        }
+
+        private void settingsSaveBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Settings.minRows = Int32.Parse(minRowTxtBox.Text);
+                //if(Settings.minRow > Settings.maxRow)
+                //{
+                //    Settings.minRow = Settings.maxRow;
+                //}
+                config.UpdateSetting("Rows", "minRow", Settings.minRows.ToString());
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Inserisci un numero!!", "Format Error");
+            }
+            try
+            {
+                Settings.maxRows = Int32.Parse(maxRowTxtBox.Text);
+                //if (Settings.maxRow < Settings.minRow)
+                //{
+                //    Settings.minRow = Settings.maxRow;
+                //}
+                config.UpdateSetting("Rows", "maxRow", Settings.maxRows.ToString());
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Inserisci un numero!!", "Format Error");
+            }
+            try
+            {
+                Settings.minCols = Int32.Parse(minColTxtBox.Text);
+                //if (Settings.minCol > Settings.maxCol)
+                //{
+                //    Settings.minCol = Settings.maxCol;
+                //}
+                config.UpdateSetting("Columns", "minCol", Settings.minCols.ToString());
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Inserisci un numero!!", "Format Error");
+            }
+            try
+            {
+                Settings.maxCols = Int32.Parse(maxColTxtBox.Text);
+                //if (Settings.maxCol < Settings.minCol)
+                //{
+                //    Settings.maxCol = Settings.minCol;
+                //}
+                config.UpdateSetting("Columns", "maxCol", Settings.maxCols.ToString());
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Inserisci un numero!!", "Format Error");
+            }
+
+
+            if (itaCheckBox.Checked)
+            {
+                Settings.langSelection = Settings.Lang.Italiano;
+                config.UpdateSetting("Language", "langSelection", ((int)Settings.Lang.Italiano).ToString());
+            }
+            else if (engCheckBox.Checked)
+            {
+                Settings.langSelection = Settings.Lang.English;
+                config.UpdateSetting("Language", "langSelection", ((int)Settings.Lang.English).ToString());
+            }
+
+            SetLanguage();
+        }
+
+        // Initialize setting variables using config file
+        private void InitializeSettings()
+        {
+            int temp = Int32.Parse(config.GetSetting("Language", "langSelection"));
+            Settings.langSelection = (Settings.Lang)temp;
+            if (Settings.langSelection == Settings.Lang.Italiano)
+            {
+                itaCheckBox.Checked = true;
+                engCheckBox.Checked = false;
+            }
+            else if (Settings.langSelection == Settings.Lang.English)
+            {
+                engCheckBox.Checked = true;
+                itaCheckBox.Checked = false;
+            }
+            Settings.minRows = Int32.Parse(config.GetSetting("Rows", "minRow"));
+            minRowTxtBox.Text = config.GetSetting("Rows", "minRow");
+            Settings.maxRows = Int32.Parse(config.GetSetting("Rows", "maxRow"));
+            maxRowTxtBox.Text = config.GetSetting("Rows", "maxRow");
+            Settings.minCols = Int32.Parse(config.GetSetting("Columns", "minCol"));
+            minColTxtBox.Text = config.GetSetting("Columns", "minCol");
+            Settings.maxCols = Int32.Parse(config.GetSetting("Columns", "maxCol"));
+            maxColTxtBox.Text = config.GetSetting("Columns", "maxCol");
+            // Standardizing all the background colors
+            String color = config.GetSetting("Colors", "backgroundColor");
+            Settings.backgroundColor = LinkColor(color);
+            this.BackColor = Settings.backgroundColor;
+            labelNumOp.BackColor = Settings.backgroundColor;
+            numMosse.BackColor = Settings.backgroundColor;
+            maxNumMosse.BackColor = Settings.backgroundColor;
+            MainPanel.BackColor = Settings.backgroundColor;
+            MoveLabelPanel.BackColor = Settings.backgroundColor;
+            UpperLabelMovePanel.BackColor = Settings.backgroundColor;
+            color = config.GetSetting("Colors", "rectBackgroundColor");
+            Settings.rectBackgroundColor = LinkColor(color);
+            color = config.GetSetting("Colors", "tilesColor");
+            Settings.tilesColor = LinkColor(color);
+            color = config.GetSetting("Colors", "wrongTilesColor");
+            Settings.wrongTilesColor = LinkColor(color);
+            color = config.GetSetting("Colors", "moveTilesColor");
+            Settings.moveTilesColor = LinkColor(color);
+        }
+
+        // Added just some colors, developers can modify this method to add others
+        private Color LinkColor(String color)
+        {
+            if (color == "BLACK")
+                return Color.Black;
+            else if (color == "RED")
+                return Color.Red;
+            else if (color == "GRAY")
+                return Color.Gray;
+            else
+                return Color.White;
+        }
+
+        // Writing on the labels and the buttons
+        private void SetLanguage()
+        {
+            labelNumOp.Text = Settings.numOp[(int)Settings.langSelection];
+            maxNumMosse.Text = Settings.maxNumOp[(int)Settings.langSelection] + Settings.maxMoves.ToString();
+            backButton.Text = Settings.back[(int)Settings.langSelection];
+            homeButton.Text = Settings.home[(int)Settings.langSelection];
+            resetButton.Text = Settings.reset[(int)Settings.langSelection];
+            newGameButton.Text = Settings.newGame[(int)Settings.langSelection];
+            quitButton.Text = Settings.quit[(int)Settings.langSelection];
+            startEx.Text = Settings.startExStr[(int)Settings.langSelection];
+            settings.Text = Settings.settingsStr[(int)Settings.langSelection];
+            credits.Text = Settings.creditsStr[(int)Settings.langSelection];
+            exit.Text = Settings.exitStr[(int)Settings.langSelection];
+            labelLang.Text = Settings.langLabel[(int)Settings.langSelection];
+            labelMinRow.Text = Settings.minRowLabel[(int)Settings.langSelection];
+            labelMaxRow.Text = Settings.maxRowLabel[(int)Settings.langSelection];
+            labelMinCol.Text = Settings.minColLabel[(int)Settings.langSelection];
+            labelMaxCol.Text = Settings.maxColLabel[(int)Settings.langSelection];
         }
 
         protected override void OnHandleCreated(EventArgs e)
@@ -277,7 +412,7 @@ namespace HCI_Project
                     p.MouseClick += MouseClicked;
 
                     p.Name = "panel" + row + '-' + column;
-                    p.BackColor = rectBackgroundColor;
+                    p.BackColor = Settings.rectBackgroundColor;
 
                     p.Margin = new Padding(0, 0, 0, 0);
                     p.Dock = DockStyle.Fill;
@@ -321,7 +456,7 @@ namespace HCI_Project
                         {
                             squareMatrix[j, i] = 0;
                             Panel panel = (Panel)parent.Controls.Find("panel" + j.ToString() + '-' + i.ToString(), true)[0];
-                            panel.BackColor = rectBackgroundColor;
+                            panel.BackColor = Settings.rectBackgroundColor;
                         }
                 UpdateMoves();
             }
@@ -336,7 +471,7 @@ namespace HCI_Project
                     {
                         squareMatrix[j, i] = 0;
                         Panel panel = (Panel)parent.Controls.Find("panel" + j.ToString() + '-' + i.ToString(), true)[0];
-                        panel.BackColor = rectBackgroundColor;
+                        panel.BackColor = Settings.rectBackgroundColor;
                         hasBeenRemoved = true;
                     }
             if (hasBeenRemoved)
@@ -439,7 +574,7 @@ namespace HCI_Project
                     {
                         squareMatrix[ro, co] = move + 1;
                         Panel panel = (Panel)parent.Controls.Find("panel" + ro.ToString() + '-' + co.ToString(), true)[0];
-                        panel.BackColor = tilesColor;
+                        panel.BackColor = Settings.tilesColor;
                     }
                 if (figure == 5)
                 {
@@ -447,7 +582,7 @@ namespace HCI_Project
                     {
                         Panel panel = (Panel)parent.Controls.Find("panel" + ro5.ToString() + '-' + co5.ToString(), true)[0];
                         squareMatrix[ro5, co5] = move + 1;
-                        panel.BackColor = tilesColor;
+                        panel.BackColor = Settings.tilesColor;
                     }
                     catch
                     {
@@ -493,7 +628,7 @@ namespace HCI_Project
         }
         private void checkIfMaxMoves()
         {
-            if (move >= maxMoves)
+            if (move >= Settings.maxMoves)
             {
                 winForm = new WinForm(false);
                 winForm.Show();
@@ -625,14 +760,14 @@ namespace HCI_Project
                         if (checkIfClicked(figureRows, figureColumns) || figureIsOver)
                         {
                             Panel panel = (Panel)parent.Controls.Find("panel" + ro.ToString() + '-' + co.ToString(), true)[0];
-                            panel.BackColor = wrongTilesColor;
+                            panel.BackColor = Settings.wrongTilesColor;
                             figureIsOver = true;
                         }
                         else
                         {
                             Panel panel = (Panel)parent.Controls.Find("panel" + ro.ToString() + '-' + co.ToString(), true)[0];
                             if (squareMatrix[ro, co] == 0)
-                                panel.BackColor = moveTilesColor;
+                                panel.BackColor = Settings.moveTilesColor;
                         }
                     }
                     catch // In case the figure goes out of the square
@@ -646,7 +781,7 @@ namespace HCI_Project
                                 if (redRo < rows && redCo < columns)
                                 {
                                     Panel panel = (Panel)parent.Controls.Find("panel" + redRo.ToString() + '-' + redCo.ToString(), true)[0];
-                                    panel.BackColor = wrongTilesColor;
+                                    panel.BackColor = Settings.wrongTilesColor;
                                 }
                             }
                         return;
@@ -659,12 +794,12 @@ namespace HCI_Project
                     if (figureIsOver)
                     {
                         Panel panel = (Panel)parent.Controls.Find("panel" + ro5.ToString() + '-' + co5.ToString(), true)[0];
-                        panel.BackColor = wrongTilesColor;
+                        panel.BackColor = Settings.wrongTilesColor;
                     }
                     else
                     {
                         Panel panel = (Panel)parent.Controls.Find("panel" + ro5.ToString() + '-' + co5.ToString(), true)[0];
-                        panel.BackColor = moveTilesColor;
+                        panel.BackColor = Settings.moveTilesColor;
                     }
                 }
                 catch
@@ -677,7 +812,7 @@ namespace HCI_Project
                             if (redRo < rows && redCo < columns)
                             {
                                 Panel panel = (Panel)parent.Controls.Find("panel" + redRo.ToString() + '-' + redCo.ToString(), true)[0];
-                                panel.BackColor = wrongTilesColor;
+                                panel.BackColor = Settings.wrongTilesColor;
                             }
                         }
                     return;
@@ -766,9 +901,9 @@ namespace HCI_Project
                     {
                         Panel panel = (Panel)parent.Controls.Find("panel" + ro.ToString() + '-' + co.ToString(), true)[0];
                         if (squareMatrix[ro, co] == 0)
-                            panel.BackColor = rectBackgroundColor;
+                            panel.BackColor = Settings.rectBackgroundColor;
                         else
-                            panel.BackColor = tilesColor;
+                            panel.BackColor = Settings.tilesColor;
                     }
                     catch { }
                 }
@@ -798,9 +933,9 @@ namespace HCI_Project
                 {
                     Panel panel = (Panel)parent.Controls.Find("panel" + ro.ToString() + '-' + co.ToString(), true)[0];
                     if (squareMatrix[ro, co] == 0)
-                        panel.BackColor = rectBackgroundColor;
+                        panel.BackColor = Settings.rectBackgroundColor;
                     else
-                        panel.BackColor = tilesColor;
+                        panel.BackColor = Settings.tilesColor;
                 }
                 catch { }
             }
@@ -859,7 +994,7 @@ namespace HCI_Project
                 {
                     squareMatrix[j, i] = 0;
                     Panel panel = (Panel)parent.Controls.Find("panel" + j.ToString() + '-' + i.ToString(), true)[0];
-                    panel.BackColor = rectBackgroundColor;
+                    panel.BackColor = Settings.rectBackgroundColor;
                 }
             move = 0;
             numMosse.Text = move.ToString();
@@ -886,8 +1021,8 @@ namespace HCI_Project
                 sqAreaPanel.Controls.Remove(panel);
             }
             catch { }
-            rows = GetRandomOdd(minRows, maxRows);
-            columns = GetRandomOdd(minColumns, maxColumns);
+            rows = GetRandomOdd(Settings.minRows, Settings.maxRows);
+            columns = GetRandomOdd(Settings.minCols, Settings.maxCols);
 
             hasWon = false;
             // This is done to prevent crashes
