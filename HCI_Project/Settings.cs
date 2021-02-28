@@ -38,7 +38,7 @@ namespace HCI_Project
         public static string[] minColLabel = { "Numero minimo di colonne", "Min number of columns" };
         public static string[] maxColLabel = { "Numero massimo di colonne", "Max number of columns" };
         public static string[] saveStr = { "Salva", "Save" };
-        public static string[] backMenuStr = { "Menù principale", "Main menu" };
+        public static string[] backMenuStr = { "Menu principale", "Main menu" };
         
         // Chosen by the user
         public static int minRows = 3;

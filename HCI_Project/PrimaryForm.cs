@@ -142,56 +142,31 @@ namespace HCI_Project
             try
             {
                 Settings.minRows = Int32.Parse(minRowTxtBox.Text);
-                //if(Settings.minRow > Settings.maxRow)
-                //{
-                //    Settings.minRow = Settings.maxRow;
-                //}
-                config.UpdateSetting("Rows", "minRow", Settings.minRows.ToString());
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Inserisci un numero!!", "Format Error");
-            }
-            try
-            {
                 Settings.maxRows = Int32.Parse(maxRowTxtBox.Text);
-                //if (Settings.maxRow < Settings.minRow)
-                //{
-                //    Settings.minRow = Settings.maxRow;
-                //}
-                config.UpdateSetting("Rows", "maxRow", Settings.maxRows.ToString());
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Inserisci un numero!!", "Format Error");
-            }
-            try
-            {
                 Settings.minCols = Int32.Parse(minColTxtBox.Text);
-                //if (Settings.minCol > Settings.maxCol)
-                //{
-                //    Settings.minCol = Settings.maxCol;
-                //}
-                config.UpdateSetting("Columns", "minCol", Settings.minCols.ToString());
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Inserisci un numero!!", "Format Error");
-            }
-            try
-            {
                 Settings.maxCols = Int32.Parse(maxColTxtBox.Text);
-                //if (Settings.maxCol < Settings.minCol)
-                //{
-                //    Settings.maxCol = Settings.minCol;
-                //}
+                
+                if (Settings.minRows > Settings.maxRows)
+                {
+                    Settings.minRows = Settings.maxRows;
+                    minRowTxtBox.Text = Settings.maxRows.ToString();
+                }
+
+                if (Settings.minCols > Settings.maxRows)
+                {
+                    Settings.minCols = Settings.maxCols;
+                    minColTxtBox.Text = Settings.maxCols.ToString();
+                }
+
+                config.UpdateSetting("Rows", "minRow", Settings.minRows.ToString());
+                config.UpdateSetting("Rows", "maxRow", Settings.maxRows.ToString());
+                config.UpdateSetting("Columns", "minCol", Settings.minCols.ToString());
                 config.UpdateSetting("Columns", "maxCol", Settings.maxCols.ToString());
             }
             catch (FormatException)
             {
                 MessageBox.Show("Inserisci un numero!!", "Format Error");
             }
-
 
             if (itaCheckBox.Checked)
             {
@@ -230,6 +205,8 @@ namespace HCI_Project
             minColTxtBox.Text = config.GetSetting("Columns", "minCol");
             Settings.maxCols = Int32.Parse(config.GetSetting("Columns", "maxCol"));
             maxColTxtBox.Text = config.GetSetting("Columns", "maxCol");
+            Settings.maxMoves = Int32.Parse(config.GetSetting("Moves", "maxMoves"));
+            maxMovTxtBtn.Text = config.GetSetting("Moves", "maxMoves");
             // Standardizing all the background colors
             String color = config.GetSetting("Colors", "backgroundColor");
             Settings.backgroundColor = LinkColor(color);
@@ -342,6 +319,7 @@ namespace HCI_Project
             labelMaxRow.Font = new Font(maxNumMosse.Font.FontFamily.Name, newsizeLab);
             labelMinCol.Font = new Font(maxNumMosse.Font.FontFamily.Name, newsizeLab);
             labelMaxCol.Font = new Font(maxNumMosse.Font.FontFamily.Name, newsizeLab);
+            labelMaxMov.Font = new Font(maxNumMosse.Font.FontFamily.Name, newsizeLab);
             settingsSaveBtn.Font = new Font(maxNumMosse.Font.FontFamily.Name, newsizeBut);
             settingReturnBtn.Font = new Font(maxNumMosse.Font.FontFamily.Name, newsizeBut);
 
@@ -349,6 +327,10 @@ namespace HCI_Project
             maxRowTxtBox.Font = new Font(maxNumMosse.Font.FontFamily.Name, newsizeLab/2);
             maxColTxtBox.Font = new Font(maxNumMosse.Font.FontFamily.Name, newsizeLab/2);
             minColTxtBox.Font = new Font(maxNumMosse.Font.FontFamily.Name, newsizeLab/2);
+            maxMovTxtBtn.Font = new Font(maxNumMosse.Font.FontFamily.Name, newsizeLab / 2);
+
+            itaCheckBox.Font = new Font(maxNumMosse.Font.FontFamily.Name, newsizeLab / 2);
+            engCheckBox.Font = new Font(maxNumMosse.Font.FontFamily.Name, newsizeLab / 2);
         }
 
         // Method to generate the rectangular area to be filled
