@@ -30,5 +30,10 @@ namespace HCI_Project
         {
 
         }
+
+        private void WinForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

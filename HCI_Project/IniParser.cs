@@ -76,6 +76,7 @@ namespace HCI_Project
                 AddSetting("Rows", "maxRow", Settings.maxRows.ToString());
                 AddSetting("Columns", "minCol", Settings.minCols.ToString());
                 AddSetting("Columns", "maxCol", Settings.maxCols.ToString());
+                AddSetting("Moves", "maxMoves", Settings.maxMoves.ToString());
                 String temp = ReverseLinkColor(Settings.tilesColor);
                 AddSetting("Colors", "tilesColor", temp);
                 temp = ReverseLinkColor(Settings.wrongTilesColor);

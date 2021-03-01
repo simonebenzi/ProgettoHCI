@@ -47,7 +47,6 @@ namespace HCI_Project
             this.labelWon.TabIndex = 0;
             this.labelWon.Text = "You Won!";
             this.labelWon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            
             // 
             // labelSuggestion
             // 
@@ -82,8 +81,10 @@ namespace HCI_Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 203);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "WinForm";
             this.Text = "WinForm";
+            this.Load += new System.EventHandler(this.WinForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
