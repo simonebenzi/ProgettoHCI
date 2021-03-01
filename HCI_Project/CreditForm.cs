@@ -15,7 +15,9 @@ namespace HCI_Project
         public CreditForm()
         {
             InitializeComponent();
+            System.Drawing.Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea;
 
+            this.Size = new System.Drawing.Size(workingRectangle.Width/2, workingRectangle.Height - workingRectangle.Height/10);
             Instructions.Text = Config.instructionsTitle[(int)Config.langSelection];
             richTextBox1.Text = Config.instructions[(int)Config.langSelection];
             DevelopedLabel.Text = Config.developers[(int)Config.langSelection];
