@@ -155,7 +155,7 @@ namespace HCI_Project
                 if (Settings.minRows > Settings.maxRows)
                     Settings.minRows = Settings.maxRows;
 
-                if (Settings.minCols > Settings.maxRows)
+                if (Settings.minCols > Settings.maxCols)
                     Settings.minCols = Settings.maxCols;
 
                 if (Settings.maxCols >= 30)
