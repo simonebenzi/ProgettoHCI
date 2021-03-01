@@ -67,7 +67,7 @@
             this.maxRowTxtBox = new System.Windows.Forms.TextBox();
             this.tableMaxMov = new System.Windows.Forms.TableLayoutPanel();
             this.labelMaxMov = new System.Windows.Forms.Label();
-            this.maxMovTxtBtn = new System.Windows.Forms.TextBox();
+            this.maxMovTxtBox = new System.Windows.Forms.TextBox();
             this.tableMaxCol = new System.Windows.Forms.TableLayoutPanel();
             this.labelMaxCol = new System.Windows.Forms.Label();
             this.maxColTxtBox = new System.Windows.Forms.TextBox();
@@ -113,7 +113,7 @@
             this.initialPage.Controls.Add(this.tableLayoutPanel3);
             this.initialPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.initialPage.Location = new System.Drawing.Point(0, 0);
-            this.initialPage.Margin = new System.Windows.Forms.Padding(5);
+            this.initialPage.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.initialPage.Name = "initialPage";
             this.initialPage.Size = new System.Drawing.Size(1447, 758);
             this.initialPage.TabIndex = 0;
@@ -127,7 +127,7 @@
             this.tableLayoutPanel3.Controls.Add(this.appNameLabel, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
@@ -147,7 +147,7 @@
             this.tableLayoutPanel1.Controls.Add(this.exit, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 232);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.66667F));
@@ -166,7 +166,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.startEx.AutoSize = true;
             this.startEx.Location = new System.Drawing.Point(579, 5);
-            this.startEx.Margin = new System.Windows.Forms.Padding(5);
+            this.startEx.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.startEx.Name = "startEx";
             this.startEx.Size = new System.Drawing.Size(277, 102);
             this.startEx.TabIndex = 0;
@@ -181,7 +181,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.settings.AutoSize = true;
             this.settings.Location = new System.Drawing.Point(579, 117);
-            this.settings.Margin = new System.Windows.Forms.Padding(5);
+            this.settings.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.settings.Name = "settings";
             this.settings.Size = new System.Drawing.Size(277, 102);
             this.settings.TabIndex = 1;
@@ -196,7 +196,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.credits.AutoSize = true;
             this.credits.Location = new System.Drawing.Point(579, 229);
-            this.credits.Margin = new System.Windows.Forms.Padding(5);
+            this.credits.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.credits.Name = "credits";
             this.credits.Size = new System.Drawing.Size(277, 102);
             this.credits.TabIndex = 2;
@@ -211,7 +211,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.exit.AutoSize = true;
             this.exit.Location = new System.Drawing.Point(579, 341);
-            this.exit.Margin = new System.Windows.Forms.Padding(5);
+            this.exit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(277, 102);
             this.exit.TabIndex = 3;
@@ -236,7 +236,7 @@
             this.startExPage.Controls.Add(this.label1);
             this.startExPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startExPage.Location = new System.Drawing.Point(0, 0);
-            this.startExPage.Margin = new System.Windows.Forms.Padding(5);
+            this.startExPage.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.startExPage.Name = "startExPage";
             this.startExPage.Size = new System.Drawing.Size(1447, 758);
             this.startExPage.TabIndex = 1;
@@ -290,7 +290,7 @@
             // 
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 4);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(181, 461);
             this.flowLayoutPanel2.TabIndex = 3;
@@ -363,7 +363,7 @@
             this.quitButton.FlatAppearance.BorderSize = 0;
             this.quitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quitButton.Location = new System.Drawing.Point(1132, 4);
-            this.quitButton.Margin = new System.Windows.Forms.Padding(4);
+            this.quitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(118, 107);
             this.quitButton.TabIndex = 2;
@@ -576,7 +576,7 @@
             this.settingsPage.Controls.Add(this.tableLayoutPanel2);
             this.settingsPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settingsPage.Location = new System.Drawing.Point(0, 0);
-            this.settingsPage.Margin = new System.Windows.Forms.Padding(4);
+            this.settingsPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.settingsPage.Name = "settingsPage";
             this.settingsPage.Size = new System.Drawing.Size(1447, 758);
             this.settingsPage.TabIndex = 3;
@@ -594,7 +594,7 @@
             this.tableLayoutPanel2.Controls.Add(this.tableSettingsBtn, 0, 6);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 7;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -615,7 +615,7 @@
             this.tableMaxRow.Controls.Add(this.maxRowTxtBox, 0, 1);
             this.tableMaxRow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableMaxRow.Location = new System.Drawing.Point(4, 230);
-            this.tableMaxRow.Margin = new System.Windows.Forms.Padding(4);
+            this.tableMaxRow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableMaxRow.Name = "tableMaxRow";
             this.tableMaxRow.RowCount = 2;
             this.tableMaxRow.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.03F));
@@ -649,10 +649,10 @@
             this.tableMaxMov.ColumnCount = 1;
             this.tableMaxMov.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableMaxMov.Controls.Add(this.labelMaxMov, 0, 0);
-            this.tableMaxMov.Controls.Add(this.maxMovTxtBtn, 0, 1);
+            this.tableMaxMov.Controls.Add(this.maxMovTxtBox, 0, 1);
             this.tableMaxMov.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableMaxMov.Location = new System.Drawing.Point(4, 569);
-            this.tableMaxMov.Margin = new System.Windows.Forms.Padding(4);
+            this.tableMaxMov.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableMaxMov.Name = "tableMaxMov";
             this.tableMaxMov.RowCount = 2;
             this.tableMaxMov.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.44896F));
@@ -672,14 +672,14 @@
             this.labelMaxMov.TabIndex = 0;
             this.labelMaxMov.Text = "Numero massimo di mosse";
             // 
-            // maxMovTxtBtn
+            // maxMovTxtBox
             // 
-            this.maxMovTxtBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxMovTxtBtn.Location = new System.Drawing.Point(27, 62);
-            this.maxMovTxtBtn.Margin = new System.Windows.Forms.Padding(27, 6, 7, 6);
-            this.maxMovTxtBtn.Name = "maxMovTxtBtn";
-            this.maxMovTxtBtn.Size = new System.Drawing.Size(112, 26);
-            this.maxMovTxtBtn.TabIndex = 1;
+            this.maxMovTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxMovTxtBox.Location = new System.Drawing.Point(27, 62);
+            this.maxMovTxtBox.Margin = new System.Windows.Forms.Padding(27, 6, 7, 6);
+            this.maxMovTxtBox.Name = "maxMovTxtBox";
+            this.maxMovTxtBox.Size = new System.Drawing.Size(112, 26);
+            this.maxMovTxtBox.TabIndex = 1;
             // 
             // tableMaxCol
             // 
@@ -689,7 +689,7 @@
             this.tableMaxCol.Controls.Add(this.maxColTxtBox, 0, 1);
             this.tableMaxCol.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableMaxCol.Location = new System.Drawing.Point(4, 456);
-            this.tableMaxCol.Margin = new System.Windows.Forms.Padding(4);
+            this.tableMaxCol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableMaxCol.Name = "tableMaxCol";
             this.tableMaxCol.RowCount = 2;
             this.tableMaxCol.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.44896F));
@@ -726,7 +726,7 @@
             this.tableMinCol.Controls.Add(this.minColTxtBox, 0, 1);
             this.tableMinCol.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableMinCol.Location = new System.Drawing.Point(4, 343);
-            this.tableMinCol.Margin = new System.Windows.Forms.Padding(4);
+            this.tableMinCol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableMinCol.Name = "tableMinCol";
             this.tableMinCol.RowCount = 2;
             this.tableMinCol.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.03F));
@@ -763,7 +763,7 @@
             this.tableMinRow.Controls.Add(this.minRowTxtBox, 0, 1);
             this.tableMinRow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableMinRow.Location = new System.Drawing.Point(4, 117);
-            this.tableMinRow.Margin = new System.Windows.Forms.Padding(4);
+            this.tableMinRow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableMinRow.Name = "tableMinRow";
             this.tableMinRow.RowCount = 2;
             this.tableMinRow.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.03F));
@@ -802,7 +802,7 @@
             this.tableLang.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tableLang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLang.Location = new System.Drawing.Point(4, 4);
-            this.tableLang.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLang.Name = "tableLang";
             this.tableLang.RowCount = 2;
             this.tableLang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.03F));
@@ -870,7 +870,7 @@
             this.tableSettingsBtn.Controls.Add(this.settingReturnBtn, 2, 1);
             this.tableSettingsBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableSettingsBtn.Location = new System.Drawing.Point(4, 682);
-            this.tableSettingsBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.tableSettingsBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableSettingsBtn.Name = "tableSettingsBtn";
             this.tableSettingsBtn.RowCount = 3;
             this.tableSettingsBtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -883,7 +883,7 @@
             // 
             this.settingsSaveBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settingsSaveBtn.Location = new System.Drawing.Point(507, 14);
-            this.settingsSaveBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.settingsSaveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.settingsSaveBtn.Name = "settingsSaveBtn";
             this.settingsSaveBtn.Size = new System.Drawing.Size(207, 42);
             this.settingsSaveBtn.TabIndex = 0;
@@ -895,7 +895,7 @@
             // 
             this.settingReturnBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settingReturnBtn.Location = new System.Drawing.Point(722, 14);
-            this.settingReturnBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.settingReturnBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.settingReturnBtn.Name = "settingReturnBtn";
             this.settingReturnBtn.Size = new System.Drawing.Size(207, 42);
             this.settingReturnBtn.TabIndex = 1;
@@ -913,7 +913,7 @@
             this.Controls.Add(this.GamePanel);
             this.Controls.Add(this.startExPage);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "PrimaryForm";
             this.Text = "FillSquare";
             this.Load += new System.EventHandler(this.PrimaryForm_Load);
@@ -1013,7 +1013,7 @@
         private System.Windows.Forms.TextBox maxRowTxtBox;
         private System.Windows.Forms.TableLayoutPanel tableMaxMov;
         private System.Windows.Forms.Label labelMaxMov;
-        private System.Windows.Forms.TextBox maxMovTxtBtn;
+        private System.Windows.Forms.TextBox maxMovTxtBox;
     }
 }
 

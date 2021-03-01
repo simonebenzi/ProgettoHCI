@@ -12,18 +12,14 @@ namespace HCI_Project
 {
     public partial class WinForm : Form
     {
-        private int language = 0;
-        private string[] loseString = { "Hai raggiunto il numero massimo di mosse!", "You have reached the maximum number of moves allowed!" };
-        private string[] winString = { "Hai vinto!", "You Won!" };
-        private string[] winSuggestion = { "Premi il pulsante 'Nuovo gioco' per iniziare una nuova partita", "Press the 'New game' button to start a new game" };
         public WinForm(bool hasWon)
         {
             InitializeComponent();
             if (hasWon)
-                labelWon.Text = winString[language];
+                labelWon.Text = Config.winString[(int)Config.langSelection];
             else
-                labelWon.Text = loseString[language];
-            labelSuggestion.Text = winSuggestion[language];
+                labelWon.Text = Config.loseString[(int)Config.langSelection];
+            labelSuggestion.Text = Config.winSuggestion[(int)Config.langSelection];
         }
 
         private void label1_Click(object sender, EventArgs e)

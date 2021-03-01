@@ -29,13 +29,18 @@ namespace HCI_Project
             this.path = path;
             try
             {
+                String prevVal = null;
+                SectionPair prevSectionPair;
+                prevSectionPair.Key = null;
+                prevSectionPair.Section = null;
+
                 file = new StreamReader(path);
 
                 line = file.ReadLine();
 
                 while (line != null)
                 {
-                    line = line.Trim().ToUpper();
+                    //line = line.Trim().ToUpper();
 
                     if (line != "")
                     {
@@ -47,7 +52,7 @@ namespace HCI_Project
                         {
 
                         }
-                        else
+                        else if (line.Contains("="))
                         {
                             pair = line.Split(new char[] { '=' }, 2);
 
@@ -57,36 +62,57 @@ namespace HCI_Project
                             if (currentRoot == null)
                                 currentRoot = "ROOT";
 
-                            sectionPair.Section = currentRoot;
-                            sectionPair.Key = pair[0];
+                            sectionPair.Section = currentRoot.ToUpper();
+                            sectionPair.Key = pair[0].ToUpper();
 
                             if (pair.Length > 1)
                                 value = pair[1];
 
                             pairs.Add(sectionPair, value);
+                            prevVal = value;
+                            prevSectionPair = sectionPair;
+                        }
+                        else
+                        {
+                            prevVal += "\n" + line;
+                            AddSetting(prevSectionPair.Section, prevSectionPair.Key, prevVal);
                         }
                     }
                     line = file.ReadLine();
                 }
             }
-            catch(FileNotFoundException e) // If there is not "config.ini" file, it is created 
+            catch (FileNotFoundException e) // If there is not "config.ini" file, it is created 
             {
-                AddSetting("Language", "langSelection", ((int)Settings.langSelection).ToString());
-                AddSetting("Rows", "minRow", Settings.minRows.ToString());
-                AddSetting("Rows", "maxRow", Settings.maxRows.ToString());
-                AddSetting("Columns", "minCol", Settings.minCols.ToString());
-                AddSetting("Columns", "maxCol", Settings.maxCols.ToString());
-                AddSetting("Moves", "maxMoves", Settings.maxMoves.ToString());
-                String temp = ReverseLinkColor(Settings.tilesColor);
+                AddSetting("Language", "langSelection", ((int)Config.langSelection).ToString());
+                AddSetting("Rows", "minRow", Config.minRows.ToString());
+                AddSetting("Rows", "maxRow", Config.maxRows.ToString());
+                AddSetting("Columns", "minCol", Config.minCols.ToString());
+                AddSetting("Columns", "maxCol", Config.maxCols.ToString());
+                AddSetting("Moves", "maxMoves", Config.maxMoves.ToString());
+                String temp = ReverseLinkColor(Config.tilesColor);
                 AddSetting("Colors", "tilesColor", temp);
-                temp = ReverseLinkColor(Settings.wrongTilesColor);
+                temp = ReverseLinkColor(Config.wrongTilesColor);
                 AddSetting("Colors", "wrongTilesColor", temp);
-                temp = ReverseLinkColor(Settings.moveTilesColor);
+                temp = ReverseLinkColor(Config.moveTilesColor);
                 AddSetting("Colors", "moveTilesColor", temp);
-                temp = ReverseLinkColor(Settings.backgroundColor);
+                temp = ReverseLinkColor(Config.backgroundColor);
                 AddSetting("Colors", "backgroundColor", temp);
-                temp = ReverseLinkColor(Settings.rectBackgroundColor);
+                temp = ReverseLinkColor(Config.rectBackgroundColor);
                 AddSetting("Colors", "rectBackgroundColor", temp);
+                AddSetting("CreditForm", "instructionsTitleIta", Config.instructionsTitle[(int)Config.Lang.Italiano]);
+                AddSetting("CreditForm", "instructionsTitleEng", Config.instructionsTitle[(int)Config.Lang.English]);
+                AddSetting("CreditForm", "developersIta", Config.developers[(int)Config.Lang.Italiano]);
+                AddSetting("CreditForm", "developersEng", Config.developers[(int)Config.Lang.English]);
+                AddSetting("CreditForm", "universityIta", Config.university[(int)Config.Lang.Italiano]);
+                AddSetting("CreditForm", "universityEng", Config.university[(int)Config.Lang.English]);
+                AddSetting("CreditForm", "instructionsIta", Config.instructions[(int)Config.Lang.Italiano]);
+                AddSetting("CreditForm", "instructionsEng", Config.instructions[(int)Config.Lang.English]);
+                AddSetting("WinForm", "loseStringIta", Config.loseString[(int)Config.Lang.Italiano]);
+                AddSetting("WinForm", "loseStringEng", Config.loseString[(int)Config.Lang.English]);
+                AddSetting("WinForm", "winStringita", Config.winString[(int)Config.Lang.Italiano]);
+                AddSetting("WinForm", "winStringEng", Config.winString[(int)Config.Lang.English]);
+                AddSetting("WinForm", "winSuggestionIta", Config.winSuggestion[(int)Config.Lang.Italiano]);
+                AddSetting("WinForm", "winSuggestionEng", Config.winSuggestion[(int)Config.Lang.English]);
                 SaveFile(path);
             }
             finally
