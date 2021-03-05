@@ -15,21 +15,16 @@ namespace HCI_Project
         public CreditForm()
         {
             InitializeComponent();
-            System.Drawing.Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea;
 
-            this.Size = new System.Drawing.Size(workingRectangle.Width/2, workingRectangle.Height - workingRectangle.Height/10);
-            Instructions.Text = Config.instructionsTitle[(int)Config.langSelection];
-            richTextBox1.Text = Config.instructions[(int)Config.langSelection];
+            System.Drawing.Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea;
+            this.Size = new System.Drawing.Size(workingRectangle.Width/3, workingRectangle.Height/2 - workingRectangle.Height/10);
+            versionLabel.Text = Config.versionString[(int)Config.langSelection];
             DevelopedLabel.Text = Config.developers[(int)Config.langSelection];
             UniversityLabel.Text = Config.university[(int)Config.langSelection];
+            infoLabel.Text = Config.infoString[(int)Config.langSelection];
         }
 
         private void CreditForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

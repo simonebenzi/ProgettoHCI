@@ -24,12 +24,12 @@ namespace HCI_Project
         // PrimaryForm
         public static string[] quit = { "Esci", "Quit" };
         public static string[] home = { "Menu principale", "Main menu" };
-        public static string[] newGame = { "Nuovo gioco", "New game" };
+        public static string[] newGame = { "Nuova area", "New area" };
         public static string[] reset = { "Reset", "Reset" };
         public static string[] back = { "Indietro", "Back" };
         public static string[] numOp = { "Numero operazioni:", "Number of moves:" };
         public static string[] maxNumOp = { "Numero massimo: ", "Maximum number: " };
-        public static string[] startExStr = { "Nuovo gioco", "New Game" };
+        public static string[] startExStr = { "Inizia", "Start" };
         public static string[] settingsStr = { "Impostazioni", "Settings" };
         public static string[] creditsStr = { "Credits", "Credits" };
         public static string[] exitStr = { "Esci", "Quit" };
@@ -41,7 +41,7 @@ namespace HCI_Project
         public static string[] maxMovLabel = { "Numero massimo di mosse", "Max number of moves" };
         public static string[] saveStr = { "Salva", "Save" };
         public static string[] backMenuStr = { "Menu principale", "Main menu" };
-        // CreditForm
+        // HelpForm
         public static string[] instructionsTitle = { "Istruzioni:", "Instructions" };
         public static string[] instructions = { @"All'avvio l'applicazione presenta la possibilità di iniziare una nuova partita (pulsante 'Nuova partita'), cambiare le impostazioni (pulsante 'Impostazioni') o abbandonare il gioco (pulsante 'Esci').
 Avviando una nuova partita, è possibile iniziare a riempire l'area rettangolare divisa in quadretti utilizzando le figure mostrate a sinistra della schermata.
@@ -58,6 +58,10 @@ The buttons below the rectangular area allow to cancel the last entry of a figur
         public static string[] loseString = { "Hai raggiunto il numero massimo di mosse!", "You have reached the maximum number of moves allowed!" };
         public static string[] winString = { "Hai vinto!", "You Won!" };
         public static string[] winSuggestion = { "Premi il pulsante 'Nuovo gioco' per iniziare una nuova partita", "Press the 'New game' button to start a new game" };
+
+        //CreditForm
+        public static string[] versionString = {"Versione 1.0","Version 1.0" };
+        public static string[] infoString = { "Sviluppato per Windows 10", "Developed for Windows 10" };
 
         // Chosen by the user
         public static int minRows = 3;

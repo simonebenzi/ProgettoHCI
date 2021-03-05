@@ -301,7 +301,7 @@ namespace HCI_Project
         {
             int num = rand.Next(min, max + 1);
             if (num % 2 == 0)
-                ++num;
+                --num;
             return num;
         }
 
@@ -1088,6 +1088,12 @@ namespace HCI_Project
         private void tableMinRow_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            Form help = new HelpForm();
+            help.ShowDialog();
         }
 
         private void quitButton_Click_2(object sender, EventArgs e)
