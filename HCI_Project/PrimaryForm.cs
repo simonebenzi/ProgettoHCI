@@ -301,7 +301,7 @@ namespace HCI_Project
         {
             int num = rand.Next(min, max + 1);
             if (num % 2 == 0)
-                --num;
+                ++num;
             return num;
         }
 
