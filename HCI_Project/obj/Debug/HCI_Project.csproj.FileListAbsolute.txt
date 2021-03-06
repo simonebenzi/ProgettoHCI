@@ -2,6 +2,7 @@ C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Proget
 C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\bin\Debug\HCI_Project.exe
 C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\bin\Debug\HCI_Project.pdb
 C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\obj\Debug\HCI_Project.CreditForm.resources
+C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\obj\Debug\HCI_Project.HelpForm.resources
 C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\obj\Debug\HCI_Project.PrimaryForm.resources
 C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\obj\Debug\HCI_Project.Properties.Resources.resources
 C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\obj\Debug\HCI_Project.WinForm.resources
@@ -10,4 +11,3 @@ C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Proget
 C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\obj\Debug\HCI_Project.exe
 C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\obj\Debug\HCI_Project.pdb
 C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\obj\Debug\HCI_Project.csprojAssemblyReference.cache
-C:\Users\Tommaso\Desktop\Università\II Anno\Human-Computer Interaction I\Progetto\ProgettoHCI\HCI_Project\obj\Debug\HCI_Project.HelpForm.resources

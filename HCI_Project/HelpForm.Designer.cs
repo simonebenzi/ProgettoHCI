@@ -91,7 +91,7 @@ namespace HCI_Project
             // 
             this.helpLabel.AutoSize = true;
             this.helpLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.helpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 44.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpLabel.Location = new System.Drawing.Point(50, 39);
             this.helpLabel.Name = "helpLabel";
             this.helpLabel.Size = new System.Drawing.Size(889, 79);

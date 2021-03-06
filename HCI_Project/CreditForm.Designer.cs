@@ -38,7 +38,9 @@ namespace HCI_Project
             this.DevelopedLabel = new System.Windows.Forms.Label();
             this.UniversityLabel = new System.Windows.Forms.Label();
             this.Informations = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.versionLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.infoLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -77,8 +79,8 @@ namespace HCI_Project
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(889, 117);
             this.label1.TabIndex = 0;
-            this.label1.Text = "FillSquare";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Text = "Fill the Area";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // tableLayoutPanel3
             // 
@@ -167,11 +169,13 @@ namespace HCI_Project
             // 
             // Informations
             // 
-            this.Informations.ColumnCount = 1;
-            this.Informations.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.Informations.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.Informations.Controls.Add(this.infoLabel, 0, 1);
-            this.Informations.Controls.Add(this.versionLabel, 0, 0);
+            this.Informations.ColumnCount = 2;
+            this.Informations.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.Informations.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 97F));
+            this.Informations.Controls.Add(this.infoLabel, 1, 1);
+            this.Informations.Controls.Add(this.versionLabel, 1, 0);
+            this.Informations.Controls.Add(this.panel1, 0, 0);
+            this.Informations.Controls.Add(this.panel2, 0, 1);
             this.Informations.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Informations.Location = new System.Drawing.Point(50, 159);
             this.Informations.Name = "Informations";
@@ -181,29 +185,41 @@ namespace HCI_Project
             this.Informations.Size = new System.Drawing.Size(889, 72);
             this.Informations.TabIndex = 6;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(20, 30);
+            this.panel1.TabIndex = 4;
+            // 
             // versionLabel
             // 
             this.versionLabel.AutoSize = true;
             this.versionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.versionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.versionLabel.Location = new System.Drawing.Point(3, 0);
+            this.versionLabel.Location = new System.Drawing.Point(29, 0);
             this.versionLabel.Name = "versionLabel";
-            this.versionLabel.Size = new System.Drawing.Size(883, 36);
-            this.versionLabel.TabIndex = 2;
+            this.versionLabel.Size = new System.Drawing.Size(857, 36);
+            this.versionLabel.TabIndex = 5;
             this.versionLabel.Text = "Vers. 1.0";
-            this.versionLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(3, 39);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(20, 30);
+            this.panel2.TabIndex = 6;
             // 
             // infoLabel
             // 
             this.infoLabel.AutoSize = true;
             this.infoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoLabel.Location = new System.Drawing.Point(3, 36);
+            this.infoLabel.Location = new System.Drawing.Point(29, 36);
             this.infoLabel.Name = "infoLabel";
-            this.infoLabel.Size = new System.Drawing.Size(883, 36);
-            this.infoLabel.TabIndex = 3;
+            this.infoLabel.Size = new System.Drawing.Size(857, 36);
+            this.infoLabel.TabIndex = 7;
             this.infoLabel.Text = "Developed for Windows";
-            this.infoLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // CreditForm
             // 
@@ -241,5 +257,7 @@ namespace HCI_Project
         private System.Windows.Forms.TableLayoutPanel Informations;
         private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.Label versionLabel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

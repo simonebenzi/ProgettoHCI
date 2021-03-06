@@ -222,7 +222,7 @@ namespace HCI_Project
             maxMovTxtBox.Text = iniFile.GetSetting("Moves", "maxMoves");
             // Standardizing all the background colors
             String color = iniFile.GetSetting("Colors", "backgroundColor");
-            Config.backgroundColor = LinkColor(color);
+            Config.backgroundColor = Color.FromName(color);
             this.BackColor = Config.backgroundColor;
             labelNumOp.BackColor = Config.backgroundColor;
             numMosse.BackColor = Config.backgroundColor;
@@ -231,13 +231,13 @@ namespace HCI_Project
             MoveLabelPanel.BackColor = Config.backgroundColor;
             UpperLabelMovePanel.BackColor = Config.backgroundColor;
             color = iniFile.GetSetting("Colors", "rectBackgroundColor");
-            Config.rectBackgroundColor = LinkColor(color);
+            Config.rectBackgroundColor = Color.FromName(color);
             color = iniFile.GetSetting("Colors", "tilesColor");
-            Config.tilesColor = LinkColor(color);
+            Config.tilesColor = Color.FromName(color);
             color = iniFile.GetSetting("Colors", "wrongTilesColor");
-            Config.wrongTilesColor = LinkColor(color);
+            Config.wrongTilesColor = Color.FromName(color);
             color = iniFile.GetSetting("Colors", "moveTilesColor");
-            Config.moveTilesColor = LinkColor(color);
+            Config.moveTilesColor = Color.FromName(color);
             Config.instructionsTitle[(int)Config.Lang.Italiano] = iniFile.GetSetting("CreditForm", "instructionsTitleIta");
             Config.instructionsTitle[(int)Config.Lang.English] = iniFile.GetSetting("CreditForm", "instructionsTitleEng");
             Config.developers[(int)Config.Lang.Italiano] = iniFile.GetSetting("CreditForm", "developersIta");
@@ -252,19 +252,6 @@ namespace HCI_Project
             Config.winString[(int)Config.Lang.English] = iniFile.GetSetting("WinForm", "winStringEng");
             Config.winSuggestion[(int)Config.Lang.Italiano] = iniFile.GetSetting("WinForm", "winSuggestionIta");
             Config.winSuggestion[(int)Config.Lang.English] = iniFile.GetSetting("WinForm", "winSuggestionEng");
-        }
-
-        // Added just some colors, developers can modify this method to add others
-        private Color LinkColor(String color)
-        {
-            if (color == "BLACK")
-                return Color.Black;
-            else if (color == "RED")
-                return Color.Red;
-            else if (color == "GRAY")
-                return Color.Gray;
-            else
-                return Color.White;
         }
 
         // Writing on the labels and the buttons

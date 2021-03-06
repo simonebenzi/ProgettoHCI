@@ -19,6 +19,9 @@ namespace HCI_Project
             System.Drawing.Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea;
             this.Size = new System.Drawing.Size(workingRectangle.Width / 2, (int)((17f/30f)* workingRectangle.Height));
 
+            this.BackColor = Config.backgroundColor;
+            instructionsTextBox.BackColor = Config.backgroundColor;
+
             helpLabel.Text = Config.instructionsTitle[(int)Config.langSelection];
             instructionsTextBox.Text = Config.instructions[(int)Config.langSelection];
         }

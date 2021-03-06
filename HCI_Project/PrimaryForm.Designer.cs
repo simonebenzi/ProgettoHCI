@@ -53,6 +53,9 @@
             this.MoveLabelPanel = new System.Windows.Forms.TableLayoutPanel();
             this.maxNumMosse = new System.Windows.Forms.Label();
             this.sqAreaPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.helpButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.button3x1 = new System.Windows.Forms.Button();
             this.button2x1 = new System.Windows.Forms.Button();
             this.button1x1 = new System.Windows.Forms.Button();
@@ -85,9 +88,6 @@
             this.tableSettingsBtn = new System.Windows.Forms.TableLayoutPanel();
             this.settingsSaveBtn = new System.Windows.Forms.Button();
             this.settingReturnBtn = new System.Windows.Forms.Button();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.helpButton = new System.Windows.Forms.Button();
             this.initialPage.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -97,6 +97,7 @@
             this.MainPanel.SuspendLayout();
             this.MoveLabelPanel.SuspendLayout();
             this.sqAreaPanel.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.FigurePanel.SuspendLayout();
             this.GamePanel.SuspendLayout();
             this.settingsPage.SuspendLayout();
@@ -109,7 +110,6 @@
             this.tableLang.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableSettingsBtn.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // initialPage
@@ -228,12 +228,12 @@
             this.appNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.appNameLabel.AutoSize = true;
             this.appNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.appNameLabel.Location = new System.Drawing.Point(424, 46);
+            this.appNameLabel.Location = new System.Drawing.Point(375, 46);
             this.appNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.appNameLabel.Name = "appNameLabel";
-            this.appNameLabel.Size = new System.Drawing.Size(599, 135);
+            this.appNameLabel.Size = new System.Drawing.Size(696, 135);
             this.appNameLabel.TabIndex = 1;
-            this.appNameLabel.Text = "FillSquare";
+            this.appNameLabel.Text = "Fill the Area";
             // 
             // startExPage
             // 
@@ -460,6 +460,48 @@
             this.sqAreaPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.sqAreaPanel.Size = new System.Drawing.Size(1260, 587);
             this.sqAreaPanel.TabIndex = 1;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.Controls.Add(this.helpButton, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(1074, 471);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(183, 84);
+            this.tableLayoutPanel4.TabIndex = 4;
+            // 
+            // helpButton
+            // 
+            this.helpButton.BackColor = System.Drawing.Color.Transparent;
+            this.helpButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("helpButton.BackgroundImage")));
+            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.helpButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.helpButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.helpButton.FlatAppearance.BorderSize = 0;
+            this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helpButton.Location = new System.Drawing.Point(39, 2);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(103, 80);
+            this.helpButton.TabIndex = 4;
+            this.helpButton.UseVisualStyleBackColor = false;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(29, 76);
+            this.panel1.TabIndex = 0;
             // 
             // button3x1
             // 
@@ -908,46 +950,6 @@
             this.settingReturnBtn.UseVisualStyleBackColor = true;
             this.settingReturnBtn.Click += new System.EventHandler(this.settingReturnBtn_Click);
             // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.helpButton, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(1074, 472);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(183, 82);
-            this.tableLayoutPanel4.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(30, 76);
-            this.panel1.TabIndex = 0;
-            // 
-            // helpButton
-            // 
-            this.helpButton.BackColor = System.Drawing.Color.Transparent;
-            this.helpButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("helpButton.BackgroundImage")));
-            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.helpButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.helpButton.FlatAppearance.BorderSize = 0;
-            this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.helpButton.Location = new System.Drawing.Point(39, 2);
-            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(103, 78);
-            this.helpButton.TabIndex = 4;
-            this.helpButton.UseVisualStyleBackColor = false;
-            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
-            // 
             // PrimaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -960,7 +962,7 @@
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "PrimaryForm";
-            this.Text = "FillSquare";
+            this.Text = "Fill the Area";
             this.Load += new System.EventHandler(this.PrimaryForm_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrimaryForm_KeyPress);
             this.initialPage.ResumeLayout(false);
@@ -977,6 +979,7 @@
             this.MoveLabelPanel.ResumeLayout(false);
             this.MoveLabelPanel.PerformLayout();
             this.sqAreaPanel.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.FigurePanel.ResumeLayout(false);
             this.FigurePanel.PerformLayout();
             this.GamePanel.ResumeLayout(false);
@@ -997,7 +1000,6 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.tableSettingsBtn.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

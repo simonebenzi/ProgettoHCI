@@ -15,6 +15,7 @@ namespace HCI_Project
         public CreditForm()
         {
             InitializeComponent();
+            this.BackColor = Config.backgroundColor;
 
             System.Drawing.Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea;
             this.Size = new System.Drawing.Size(workingRectangle.Width/3, workingRectangle.Height/2 - workingRectangle.Height/10);
