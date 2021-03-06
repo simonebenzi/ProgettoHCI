@@ -70,7 +70,7 @@ The buttons below the rectangular area allow to cancel the last entry of a figur
         public static int maxCols = 10;
         public static int maxMoves = 10;
 
-        // To be changed inside the txt file
+        // To be changed inside the .ini file
         public static Color tilesColor = Color.Black;
         public static Color wrongTilesColor = Color.Red;
         public static Color moveTilesColor = Color.Gray;

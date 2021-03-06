@@ -71,6 +71,24 @@ namespace HCI_Project
             originalFormSize = GetFormArea(this.Size);
             originalFormFont1 = numMosse.Font.Size;
             originalFormFont2 = maxNumMosse.Font.Size;
+
+            ChangeLabelColor(this.Controls);
+        }
+
+        private void ChangeLabelColor(Control.ControlCollection control)
+        {
+            Color labelColor = new Color();
+            float luminance = (float)(Config.backgroundColor.R * 0.299 + Config.backgroundColor.G * 0.587 + Config.backgroundColor.B * 0.114);
+            if (luminance / 255 > 0.5)
+                labelColor = Color.Black;
+            else
+                labelColor = Color.White;
+            foreach (Control label in control)
+            {
+                ChangeLabelColor(label.Controls);
+                if (label is Label)
+                    label.ForeColor = labelColor;
+            }
         }
 
         private int GetFormArea(Size size)

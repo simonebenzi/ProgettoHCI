@@ -15,21 +15,34 @@ namespace HCI_Project
         public WinForm(bool hasWon)
         {
             InitializeComponent();
+            this.BackColor = Config.backgroundColor;
             if (hasWon)
                 labelWon.Text = Config.winString[(int)Config.langSelection];
             else
                 labelWon.Text = Config.loseString[(int)Config.langSelection];
             labelSuggestion.Text = Config.winSuggestion[(int)Config.langSelection];
-        }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            ChangeLabelColor(this.Controls);
         }
 
         private void WinForm_Load(object sender, EventArgs e)
         {
 
+        }
+        private void ChangeLabelColor(Control.ControlCollection control)
+        {
+            Color labelColor = new Color();
+            float luminance = (float)(Config.backgroundColor.R * 0.299 + Config.backgroundColor.G * 0.587 + Config.backgroundColor.B * 0.114);
+            if (luminance / 255 > 0.5)
+                labelColor = Color.Black;
+            else
+                labelColor = Color.White;
+            foreach (Control label in control)
+            {
+                ChangeLabelColor(label.Controls);
+                if (label is Label || label.Name == "instructionsTextBox")
+                    label.ForeColor = labelColor;
+            }
         }
     }
 }
